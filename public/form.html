@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <style>body{
+    /* background-color: wheat; */
+    font-family: sans-serif;
+    cursor: pointer;
+    margin: 0;
+    padding:0;
+    background: #f7ff00;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #db36a4, #f7ff00);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #db36a4, #f7ff00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  
+  p{
+    margin: 0;
+  }
+  
+  .header{
+    background-color:black;
+    color:white;
+    font-size: 2.5em;
+    padding: 0.5em;
+    text-align:center;
+  }
+  .section--main{
+    background: #f7ff00;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #db36a4, #f7ff00);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #db36a4, #f7ff00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    /* height:20em; */
+    padding: 5em;
+  
+  }
+  
+  
+  
+  .form--div{
+    /* background-color:linear-gradient(red 50,orange,purple); */
+    background: #00C9FF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #92FE9D, #00C9FF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #92FE9D, #00C9FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+    height:fit-content;
+    width: fit-content;
+    padding: 1em;
+    border-radius: 12px;
+    border: 1px solid black;
+    box-shadow: 4px 4px 16px 16px rgba(255, 255, 255, 0.534);
+  }
+  
+  .form--div form{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  button{
+  background-color: white;
+    border-radius: 12px;
+    border: 1px solid black;
+    padding: 1em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-size: 1em;
+    width: max-content;
+  }
+  
+  button:hover{
+    background-color:rgb(203, 203, 255);
+    transform: scale(1.4);
+    border-radius: 12px;
+    margin-bottom: 2em;
+    border: 1px solid black;
+    padding: 1em;
+    margin-top: 2em;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  
+  label{
+    font-size: 2em;
+    margin: 2vmin;
+  
+  }
+  
+  input{
+    font-size: 1em;
+    border: 1px solid black;
+    border-radius: 12px;
+  }
+  
+  .header p:nth-child(2){
+    margin-top:2vmax;
+    font-size:0.5em;
+  }
+  
+  .header p:nth-child(3){
+    margin: 2vmin;
+    font-size:0.5em;
+  }</style>
+  <title>📧 MAILSENDER</title>
+</head>
+
+<body>
+  <div class="header">
+    <p>GET A SPECIAL EMAIL FROM ME ⚡</p>
+    <p>A trial for Nodemailer ! Thanks for helping me in checking 🚀</p>
+    <p>- Rohan Kulkarni</p>
+  </div>
+  <section class="section--main">
+      <div class="form--div">
+        <form method="POST" id="formElem" >
+          <label for="">Name : <input type="text" name="name" ></label>
+          <label for="">Email : <input type="email" name="email"></label>
+          <div>
+          <button type="submit" onclick="sent()">GET EMAIL</button>
+          <button type="reset">RESET</button>
+        </div>
+        </form>
+      </div>
+    </section>
+
+    <script src="script.js">
+    const sent = function(){
+      const div = document.querySelector('.form--div');
+      div.innerHTML = `<p>EMAIL SENT ✅</p>`
+    }
+    
+    </script>
+</body>
+
+</html>
