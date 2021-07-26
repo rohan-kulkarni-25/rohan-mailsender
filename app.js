@@ -20,7 +20,7 @@ const  transporter = nodemailer.createTransport({
   }
 });
 
-router.get('mail', (req, res) => {
+app.get('/', (req, res) => {
   res.writeHead(200, {
     'Content-type': 'text/html'
   });
@@ -28,7 +28,7 @@ router.get('mail', (req, res) => {
   res.end(form);
 })
 
-router.post('mail', (req, res) => {
+app.post('/', (req, res) => {
     const mailOptions = {
     from: 'rohank2502@gmail.com',
     to:`${req.body.email}`,
@@ -51,7 +51,7 @@ router.post('mail', (req, res) => {
 res.end(forms);
 })
 
-app.use('/', router);
+// app.use('/', router);
 
 // const port = 3000;
 // app.listen(port, () => {
