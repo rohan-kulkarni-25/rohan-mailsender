@@ -8,8 +8,8 @@ app.use(express.urlencoded());
 
 app.use(express.json())
 
-const form = fs.readFileSync(`${__dirname}/dist/index.html`);
-const forms = fs.readFileSync(`${__dirname}/dist/form-sucess.html`)
+const form = fs.readFileSync(`${__dirname}/public/index.html`);
+const forms = fs.readFileSync(`${__dirname}/public/form-sucess.html`)
 
 const  transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -19,7 +19,7 @@ const  transporter = nodemailer.createTransport({
   }
 });
 
-app.get('/',(req, res)=>{
+app.get('/mail', (req, res) => {
   res.writeHead(200, {
     'Content-type': 'text/html'
   });
@@ -27,7 +27,7 @@ app.get('/',(req, res)=>{
   res.end(form);
 })
 
-app.post('/',(req, res) => {
+app.post('/mail', (req, res) => {
     const mailOptions = {
     from: 'rohank2502@gmail.com',
     to:`${req.body.email}`,
