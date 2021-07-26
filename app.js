@@ -3,6 +3,7 @@ const nodemailer = require('nodemailer');
 const dotenv = require('dotenv').config();
 const fs = require('fs');
 const app = express();
+const router = express.Router();
 
 app.use(express.urlencoded());
 
@@ -19,7 +20,7 @@ const  transporter = nodemailer.createTransport({
   }
 });
 
-app.get('/mail', (req, res) => {
+router.get('/', (req, res) => {
   res.writeHead(200, {
     'Content-type': 'text/html'
   });
@@ -27,7 +28,7 @@ app.get('/mail', (req, res) => {
   res.end(form);
 })
 
-app.post('/mail', (req, res) => {
+router.post('/', (req, res) => {
     const mailOptions = {
     from: 'rohank2502@gmail.com',
     to:`${req.body.email}`,
@@ -50,6 +51,7 @@ app.post('/mail', (req, res) => {
 res.end(forms);
 })
 
+app.use('/.netlify/mail', router);
 
 // const port = 3000;
 // app.listen(port,()=>{
