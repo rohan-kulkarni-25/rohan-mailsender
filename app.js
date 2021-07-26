@@ -8,7 +8,7 @@ app.use(express.urlencoded());
 
 app.use(express.json())
 
-const form = fs.readFileSync(`${__dirname}/public/form.html`);
+const form = fs.readFileSync(`${__dirname}/dist/index.html`);
 const forms = fs.readFileSync(`${__dirname}/public/form-sucess.html`)
 
 const  transporter = nodemailer.createTransport({
