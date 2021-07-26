@@ -51,6 +51,6 @@ app.post('/', (req, res) => {
 // const port = 3000;
 // let port = process.env.PORT || 8080;
 app.listen(process.env.PORT || 8080, () => {
-  console.log(`Mail Sender Running on ${port}`);
+  console.log(`Mail Sender Running`);
 })
 
