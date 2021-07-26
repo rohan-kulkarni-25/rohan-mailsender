@@ -20,7 +20,7 @@ const  transporter = nodemailer.createTransport({
   }
 });
 
-router.get('/', (req, res) => {
+router.get('mail', (req, res) => {
   res.writeHead(200, {
     'Content-type': 'text/html'
   });
@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
   res.end(form);
 })
 
-router.post('/', (req, res) => {
+router.post('mail', (req, res) => {
     const mailOptions = {
     from: 'rohank2502@gmail.com',
     to:`${req.body.email}`,
@@ -51,10 +51,10 @@ router.post('/', (req, res) => {
 res.end(forms);
 })
 
-app.use('/.netlify/mail', router);
+app.use('/', router);
 
-// const port = 3000;
-// app.listen(port,()=>{
-//   console.log(`Mail Sender Running on ${port}`);
-// })
+const port = 3000;
+app.listen(port, () => {
+  console.log(`Mail Sender Running on ${port}`);
+})
 
