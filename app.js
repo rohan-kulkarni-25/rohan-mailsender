@@ -21,6 +21,7 @@ const transporter = nodemailer.createTransport({
 });
 
 app.get('/', (req, res) => {
+  res.statusCode(200)
   res.end(form);
 })
 
@@ -49,7 +50,7 @@ app.post('/', (req, res) => {
 
 // const port = 3000;
 // let port = process.env.PORT || 8080;
-// app.listen(port, () => {
-//   console.log(`Mail Sender Running on ${port}`);
-// })
+app.listen(process.env.PORT || 8080, () => {
+  console.log(`Mail Sender Running on ${port}`);
+})
 
