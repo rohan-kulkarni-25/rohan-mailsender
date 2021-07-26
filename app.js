@@ -21,7 +21,7 @@ const transporter = nodemailer.createTransport({
 });
 
 app.get('/', (req, res) => {
-  res.statusCode(200)
+  // res.statusCode(200)
   res.end(form);
 })
 
