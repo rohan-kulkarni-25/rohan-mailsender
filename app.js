@@ -45,5 +45,5 @@ app.post('/', (req, res) => {
   res.sendFile(`${__dirname}/public/form-sucess.html`);
 })
 
-// app.listen(process.env.PORT || 3000,
-//   () => console.log("Server is running..."));
+app.listen(process.env.PORT || 3000,
+  () => console.log("Server is running..."));
