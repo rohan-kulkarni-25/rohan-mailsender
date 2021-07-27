@@ -3,15 +3,11 @@ const nodemailer = require('nodemailer');
 const dotenv = require('dotenv').config();
 const fs = require('fs');
 const app = express();
-const router = express.Router();
+
 
 app.use(express.urlencoded());
+app.use(express.static(`${__dirname}/public`))
 
-app.use(express.json())
-app.use(express.static("public"))
-
-const form = fs.readFileSync(`${__dirname}/public/form.html`);
-const forms = fs.readFileSync(`${__dirname}/public/form-sucess.html`)
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -22,8 +18,7 @@ const transporter = nodemailer.createTransport({
 });
 
 app.get('/', (req, res) => {
-  // res.statusCode(200)
-  res.end(form);
+  res.sendFile(`${__dirname}/public/form.html`);
 })
 
 app.post('/', (req, res) => {
@@ -46,9 +41,9 @@ app.post('/', (req, res) => {
       console.log('Email sent: ' + info.response);
     }
   });
-  res.end(forms);
+  console.log(req.body);
+  res.sendFile(`${__dirname}/public/form-sucess.html`);
 })
-
 
 app.listen(process.env.PORT || 3000,
   () => console.log("Server is running..."));
