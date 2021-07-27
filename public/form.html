@@ -24,8 +24,8 @@
   .header{
     background-color:black;
     color:white;
-    font-size: 2.5em;
-    padding: 0.5em;
+    font-size: 4vmax;
+    padding: 2vmax;
     text-align:center;
   }
   .section--main{
@@ -100,13 +100,53 @@
   
   .header p:nth-child(2){
     margin-top:2vmax;
-    font-size:0.5em;
+    font-size: 2vmax;
   }
   
   .header p:nth-child(3){
     margin: 2vmin;
-    font-size:0.5em;
-  }</style>
+    font-size: 2vmax;
+  }
+  @media only screen and (max-width: 450px) {
+    label{
+    font-size: 3vmax;
+    margin: 2vmin;
+  
+  }
+    input{
+    font-size: 2vmax;
+    border: 1px solid black;
+    border-radius: 12px;
+  }
+  button{
+  background-color: white;
+    border-radius: 12px;
+    border: 1px solid black;
+    padding: 1vmax;
+    margin-top: 2vmax;
+    margin-bottom: 2vmax;
+    font-size: 2vmax;
+    width: max-content;
+  }
+
+  button:hover{
+    background-color:rgb(203, 203, 255);
+    transform: scale(1.4);
+    border-radius: 12px;
+    margin-bottom: 2em;
+    border: 1px solid black;
+    padding: 1vmax;
+    margin-top: 2vmax;
+    margin-bottom: 2vmax;
+    font-size: 2vmax;
+    cursor: pointer;
+  }
+}
+  
+  
+  
+  
+  </style>
   <title>📧 MAILSENDER</title>
 </head>
 
