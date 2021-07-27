@@ -1,6 +1,9 @@
 {
   "name": "rohan-mailsender",
   "version": "1.0.0",
+  "engines": {
+    "node": "14.17.3"
+  },
   "description": "A simple mailing app which sends a special mail from my side.",
   "main": "app.js",
   "dependencies": {

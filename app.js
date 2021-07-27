@@ -8,6 +8,7 @@ const router = express.Router();
 app.use(express.urlencoded());
 
 app.use(express.json())
+app.use(express.static("public"))
 
 const form = fs.readFileSync(`${__dirname}/public/form.html`);
 const forms = fs.readFileSync(`${__dirname}/public/form-sucess.html`)
@@ -48,9 +49,6 @@ app.post('/', (req, res) => {
   res.end(forms);
 })
 
-// const port = 3000;
-// let port = process.env.PORT || 8080;
-app.listen(process.env.PORT || 8080, () => {
-  console.log(`Mail Sender Running`);
-})
 
+app.listen(process.env.PORT || 3000,
+  () => console.log("Server is running..."));
